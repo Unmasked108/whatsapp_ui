@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Web Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="profile-section">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="profile-name">WhatsApp Business</span>
+                </div>
+                <div class="header-actions">
+                    <button class="action-btn" title="New chat">
+                        <i class="fas fa-comment-dots"></i>
+                    </button>
+                    <button class="action-btn" title="Menu">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="search-section">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search or start new chat">
+                </div>
+            </div>
+            
+            <div class="conversations-list" id="conversationsList">
+                <div class="loading-conversations">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>Loading conversations...</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-area">
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-content">
+                    <div class="welcome-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h2>WhatsApp Web Clone</h2>
+                    <p>Send and receive messages without keeping your phone online.</p>
+                    <p>Select a conversation to start messaging.</p>
+                </div>
+            </div>
+
+            <div class="chat-container" id="chatContainer" style="display: none;">
+                <div class="chat-header">
+                    <div class="chat-header-info">
+                        <div class="contact-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 class="contact-name" id="contactName">Contact Name</h3>
+                            <span class="contact-status" id="contactStatus">Online</span>
+                        </div>
+                    </div>
+                    <div class="chat-header-actions">
+                        <button class="action-btn" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="action-btn" title="Attachment">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="action-btn" title="Menu">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="messages-container" id="messagesContainer">
+                    <div class="loading-messages">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Loading messages...</span>
+                    </div>
+                </div>
+
+                <div class="message-input-container">
+                    <div class="message-input-wrapper">
+                        <button class="attachment-btn" title="Attach">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <div class="message-input-box">
+                            <input type="text" id="messageInput" placeholder="Type a message" maxlength="1000">
+                            <button class="emoji-btn" title="Emoji">
+                                <i class="fas fa-smile"></i>
+                            </button>
+                        </div>
+                        <button class="send-btn" id="sendBtn" title="Send">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status indicator -->
+    <div class="connection-status" id="connectionStatus">
+        <i class="fas fa-wifi"></i>
+        <span>Connected</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
